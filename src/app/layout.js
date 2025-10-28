@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Mpesa Summary App",
-  description: "Mpesa Summary App",
+  title: "Expenditure Summary App",
+  description: "Expenditure Summary App",
 };
 
 export default function RootLayout({ children }) {
