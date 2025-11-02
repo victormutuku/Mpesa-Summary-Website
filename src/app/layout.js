@@ -1,26 +1,28 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Expenditure Summary App",
-  description: "Expenditure Summary App",
+  title: "SpendAnalysis - Track your spending",
+  description: "SpendAnalyis is an expenditure tracking application that gives you a summary of your daily and monthly spending on Mpesa.",
+  keywords: [
+    "spend tracking",
+    "Expenditure tracking",
+    "Mpesa",
+  ],
+  icons: {
+    icon: '/icon.png',
+    // shortcut: '/favicon.ico',
+    // apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.className} antialiased`}
       >
         {children}
       </body>
