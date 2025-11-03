@@ -26,7 +26,7 @@ export default function Home() {
           <div className="text-xl font-light">
             <ol>
               <li className="mb-2 list-decimal">Download the application by clicking the <a href={downloadLink} className="not-dark:text-magnolia-800 dark:text-magnolia-50 underline">download</a> button.</li>
-              <li className="mb-2 list-decimal">Pause Play Protect on Google Playstore. This is to allow you to install an application that is not on the Google Playstore. Steps to disable are shown below followed by screenshots.</li>
+              <li className="mb-2 list-decimal">Turn off Play Protect on Google Playstore. This is to allow you to install an application that is not on the Google Playstore. Steps to turn off are shown below followed by screenshots.</li>
             </ol>
             <ul className="w-full text-left mb-5">
               <li className="list-disc list-inside mb-2">Open Google Playstore and click your account icon on the top right.</li>
