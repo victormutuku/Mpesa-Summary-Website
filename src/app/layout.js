@@ -26,19 +26,10 @@ export default function RootLayout({ children }) {
       <Script 
         src="https://www.googletagmanager.com/gtag/js?id=G-BPFZ9Y2WXG"
         strategy="afterInteractive"
-        onError={(e) => {
-          console.error('Error loading Google Analytics:', e);
-        }}
       />
       <Script
         id="gtag-init"
         strategy="afterInteractive"
-        onLoad={() => {
-          console.log('Google Analytics loaded successfully');
-        }}
-        onError={(e) => {
-          console.error('Error initializing Google Analytics:', e);
-        }}
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
