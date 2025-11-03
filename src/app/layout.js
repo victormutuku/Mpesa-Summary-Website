@@ -23,22 +23,34 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* Google tag (gtag.js) */}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-BPFZ9Y2WXG" strategy="afterInteractive" />
+      <Script 
+        src="https://www.googletagmanager.com/gtag/js?id=G-BPFZ9Y2WXG"
+        strategy="afterInteractive"
+        onError={(e) => {
+          console.error('Error loading Google Analytics:', e);
+        }}
+      />
       <Script
         id="gtag-init"
         strategy="afterInteractive"
+        onLoad={() => {
+          console.log('Google Analytics loaded successfully');
+        }}
+        onError={(e) => {
+          console.error('Error initializing Google Analytics:', e);
+        }}
         dangerouslySetInnerHTML={{
           __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-BPFZ9Y2WXG');`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BPFZ9Y2WXG', {
+              page_path: window.location.pathname,
+              debug_mode: true
+            });
+          `
         }}
       />
-      <script>
-
-      </script>
       <body
         className={`${outfit.className} antialiased`}
       >
