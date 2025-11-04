@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 export default function Home() {
     const downloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.0/spendanalysis_v1.0.0.apk";
@@ -11,6 +12,10 @@ export default function Home() {
         <link rel="icon" href={theme === 'light' ? "/images/icon.png":  "/images/icon-dark.png"} sizes="any" />
       </Head>
       <div className="flex flex-col items-center justify-center px-5 not-dark:bg-magnolia-50 dark:bg-magnolia-950 not-dark:text-magnolia-950 dark:text-magnolia-50">
+        <div className="absolute top-8 left-10 right-10 flex justify-between">
+          <Link href={'/'} className="hover:underline">Home</Link>
+          <Link href={'/privacy'} className="hover:underline">Privacy</Link>
+        </div>
         <div className="h-screen flex flex-col items-center justify-center">
           <Image src={theme === 'light' ? "/images/icon.png":  "/images/icon-dark.png"} width={250} height={250} alt="App Icon" />
           <p className="font-medium text-5xl tracking-wide -mt-3 pb-10">SpendAnalysis</p>
