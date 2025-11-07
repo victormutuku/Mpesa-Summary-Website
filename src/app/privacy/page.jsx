@@ -1,14 +1,11 @@
-import Link from 'next/link'
+import HeaderLinks from '../components/HeaderLinks'
 
 export default function PrivacyPolicy() {
     return (
         <div className="flex flex-col items-center justify-center pt-20 px-5 not-dark:bg-magnolia-50 dark:bg-magnolia-950 not-dark:text-magnolia-950 dark:text-magnolia-50">
-            <div className="absolute top-8 left-10 right-10 flex justify-between">
-                <Link href={'/'} className="hover:underline">Home</Link>
-                <Link href={'/privacy'} className="hover:underline">Privacy</Link>
-            </div>
+            <HeaderLinks active='privacy'/>
             <p className='text-2xl font-medium lg:px-20 mb-8'>Privacy Policy</p>
-            <div className="text- lg:px-20">
+            <div className="lg:px-20">
                 <p className="font-semibold mb-5">Privacy Policy for SpendAnalysis</p>
                 <p className="mb-7"><span className="font-semibold">Effective Date:</span> 4th November 2025</p>
 
