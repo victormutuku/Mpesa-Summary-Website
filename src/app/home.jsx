@@ -22,9 +22,10 @@ const detectArchitecture = (userAgent) => {
 export default function Home() {
   const downloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.0/spendanalysis_v1.0.0.apk";
   const { theme } = useTheme();
-  const ua = navigator.userAgent.toLowerCase();
 
-  const [architecture, setArchitecture] = useState(detectArchitecture(ua));
+  const [architecture, setArchitecture] = useState(() => { 
+    return detectArchitecture(navigator.userAgent.toLowerCase()); 
+  });
 
   return (
     <>
