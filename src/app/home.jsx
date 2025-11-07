@@ -3,31 +3,28 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 
 import HeaderLinks from "./components/HeaderLinks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const detectArchitecture = (userAgent) => {
+  if (userAgent.includes('armv8') || userAgent.includes('aarch64') || userAgent.includes('arm64')) {
+    return 'arm64-v8a';
+  } else if (userAgent.includes('armv7')) {
+    return 'armeabi-v7a';
+  } else if (userAgent.includes('x86_64')) {
+    return 'x86_64';
+  } else if (userAgent.includes('x86')) {
+    return 'x86';
+  } else {
+    return 'Unknown architecture';
+  }
+}
 
 export default function Home() {
   const downloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.0/spendanalysis_v1.0.0.apk";
   const { theme } = useTheme();
-  const [architecture, setArchitecture] = useState('');
-
   const ua = navigator.userAgent.toLowerCase();
 
-  if (ua.includes('armv8') || ua.includes('aarch64') || ua.includes('arm64')) {
-    setArchitecture('arm64-v8a');
-    // console.log('Device architecture: arm64-v8a');
-  } else if (ua.includes('armv7')) {
-    setArchitecture('armeabi-v7a');
-    // console.log('Device architecture: armeabi-v7a');
-  } else if (ua.includes('x86_64')) {
-    setArchitecture('x86_64');
-    // console.log('Device architecture: x86_64');
-  } else if (ua.includes('x86')) {
-    setArchitecture('x86');
-    // console.log('Device architecture: x86');
-  } else {
-    setArchitecture('Unknown architecture');
-    // console.log('Unknown architecture');
-  }
+  const [architecture, setArchitecture] = useState(detectArchitecture(ua));
 
   return (
     <>
@@ -69,7 +66,7 @@ export default function Home() {
               <Image src="/images/image-4.jpg" width={250} height={300} alt="Screenshot 4" />
               <Image src="/images/image-5.jpg" width={250} height={300} alt="Screenshot 5" />
             </div>
-            <p>Arch: {architecture}</p>
+            <p className="text-sm mt-2">Arch: {architecture}</p>
           </div>
         </div>
       </div>
