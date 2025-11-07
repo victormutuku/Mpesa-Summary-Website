@@ -68,6 +68,7 @@ export default function Home() {
               <Image src="/images/image-5.jpg" width={250} height={300} alt="Screenshot 5" />
             </div>
             <p className="text-sm mt-2">Arch: {architecture}</p>
+            <p className="text-sm mt-2">{navigator.userAgent.toLowerCase()}</p>
           </div>
         </div>
       </div>
