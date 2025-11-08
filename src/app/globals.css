@@ -7,7 +7,10 @@
 
 @theme {
   --color-magnolia-50: #F3F3FF;
+  --color-magnoloa-100: #E9E9FE;
+  --color-magnoloa-200: #D6D6FE;
   --color-magnolia-800: #4221B6;
+  --color-magnolia-900: #381D95;
   --color-magnolia-950: #201065;
 }
 

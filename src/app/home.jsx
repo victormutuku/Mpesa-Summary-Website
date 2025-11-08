@@ -3,14 +3,15 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 
 import HeaderLinks from "./components/HeaderLinks";
-import DeviceArchitecture from "./components/DeviceArchitecture";
+import { useState } from "react";
 
 
 export default function Home() {
-  const downloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.1/spendanalysis_v1.0.1.apk";
+  const downloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.1/spendanalysis_v1.0.1_arm64.apk";
+  const defaultDownloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.1/spendanalysis_v1.0.1.apk";
   const { theme } = useTheme();
 
-  // Architecture detection is performed in a client-only component below
+  const [toggleDropdown, setToggleDropdown] = useState(false);
 
   return (
     <>
@@ -22,7 +23,42 @@ export default function Home() {
         <div className="h-screen flex flex-col items-center justify-center">
           <Image src={theme === 'light' ? "/images/icon.png" : "/images/icon-dark.png"} width={250} height={250} alt="App Icon" />
           <p className="font-medium text-5xl tracking-wide -mt-3 pb-10">SpendAnalysis</p>
-          <a href={downloadLink} className="border-2 my-5 py-4 px-12 rounded-lg font-medium text-lg cursor-pointer">Download</a>
+          <div className="relative">
+            <div
+              onClick={() => setToggleDropdown(!toggleDropdown)}
+              className="w-58 flex gap-5 justify-center items-center border-2 my-5 py-4 pl-6 pr-8 rounded-lg font-medium text-lg cursor-pointer">
+              <p>Download v1.0.1</p>
+              <Image
+                src={theme === 'light' ? "icons/chevron-down-dark.svg" : "icons/chevron-down-light.svg"}
+                width={16}
+                height={16}
+                alt="chevron_down"
+                className={`${toggleDropdown ? 'rotate-180' : ''}`} />
+            </div>
+
+            {toggleDropdown && <div className="w-full absolute top-22 right-0 border-2 rounded-lg">
+              <a href={downloadLink}>
+                <div className="flex gap-5 items-center justify-between py-4 pl-7 pr-10 border-b overflow-hidden cursor-pointer not-dark:hover:bg-magnolia-50 dark:hover:bg-magnolia-900">
+                  <p>Optimized APK</p>
+                  <Image
+                    src={theme === 'light' ? "icons/arrow-down-dark.svg" : "icons/arrow-down-light.svg"}
+                    width={12}
+                    height={12}
+                    alt="download" />
+                </div>
+              </a>
+              <a href={defaultDownloadLink}>
+                <div className="flex gap-5 items-center justify-between py-4 pl-7 pr-10 border-b overflow-hidden cursor-pointer not-dark:hover:bg-magnolia-50 dark:hover:bg-magnolia-900">
+                  <p>Default APK</p>
+                  <Image
+                    src={theme === 'light' ? "icons/arrow-down-dark.svg" : "icons/arrow-down-light.svg"}
+                    width={12}
+                    height={12}
+                    alt="download" />
+                </div>
+              </a>
+            </div>}
+          </div>
         </div>
         <div className="max-w-[900px] flex flex-col items-center pb-10">
           <div className="text-center tracking-wide text-xl font-light">
@@ -52,7 +88,6 @@ export default function Home() {
               <Image src="/images/image-4.jpg" width={250} height={300} alt="Screenshot 4" />
               <Image src="/images/image-5.jpg" width={250} height={300} alt="Screenshot 5" />
             </div>
-            {/* <DeviceArchitecture /> */}
           </div>
         </div>
       </div>
