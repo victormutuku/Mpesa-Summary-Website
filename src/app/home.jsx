@@ -54,7 +54,7 @@ export default function Home() {
             </ol>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center pb-20">
+        <div className="flex flex-col items-center justify-center pb-10">
           <div className="mb-10">
             <a href={arm64Url}>
               <div className="w-58 flex gap-5 justify-center items-center border-2 my-5 py-4 pl-6 pr-8 rounded-lg font-medium text-lg cursor-pointer">
@@ -74,7 +74,6 @@ export default function Home() {
             </ol>
           </div>
         </div>
-
       </div>
     </>
   )
