@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 
 import HeaderLinks from "./components/HeaderLinks";
 import { useState } from "react";
-import {latestVersion, arm64Url, defaultUrl} from "./services/FirebaseConnection"
+import { latestVersion, arm64Url, defaultUrl } from "./services/FirebaseConnection"
 
 
 export default function Home() {
@@ -25,17 +25,19 @@ export default function Home() {
           <Image src={theme === 'light' ? "/images/icon.png" : "/images/icon-dark.png"} width={250} height={250} alt="App Icon" />
           <p className="font-medium text-5xl tracking-wide -mt-3 pb-10">SpendAnalysis</p>
           <div className="relative">
-            <div
-              onClick={() => setToggleDropdown(!toggleDropdown)}
-              className="w-58 flex gap-5 justify-center items-center border-2 my-5 py-4 pl-6 pr-8 rounded-lg font-medium text-lg cursor-pointer">
-              <p>Download {latestVersion}</p>
-              <Image
+            <a href={arm64Url}>
+              <div
+                // onClick={() => setToggleDropdown(!toggleDropdown)}
+                className="w-58 flex gap-5 justify-center items-center border-2 my-5 py-4 pl-6 pr-8 rounded-lg font-medium text-lg cursor-pointer">
+                <p>Download {latestVersion}</p>
+                {/* <Image
                 src={theme === 'light' ? "icons/chevron-down-dark.svg" : "icons/chevron-down-light.svg"}
                 width={16}
                 height={16}
                 alt="chevron_down"
-                className={`${toggleDropdown ? 'rotate-180' : ''}`} />
-            </div>
+                className={`${toggleDropdown ? 'rotate-180' : ''}`} /> */}
+              </div>
+            </a>
 
             {toggleDropdown && <div className="w-full absolute top-22 right-0 border-2 rounded-lg">
               <a href={arm64Url}>
