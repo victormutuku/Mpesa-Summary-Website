@@ -4,11 +4,12 @@ import { useTheme } from "next-themes";
 
 import HeaderLinks from "./components/HeaderLinks";
 import { useState } from "react";
+import {latestVersion, arm64Url, defaultUrl} from "./services/FirebaseConnection"
 
 
 export default function Home() {
-  const downloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.1/spendanalysis_v1.0.1_arm64.apk";
-  const defaultDownloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.1/spendanalysis_v1.0.1.apk";
+  // const downloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.1/spendanalysis_v1.0.1_arm64.apk";
+  // const defaultDownloadLink = "https://github.com/victormutuku/Mpesa-Summary-Website/releases/download/v1.0.1/spendanalysis_v1.0.1.apk";
   const { theme } = useTheme();
 
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -27,7 +28,7 @@ export default function Home() {
             <div
               onClick={() => setToggleDropdown(!toggleDropdown)}
               className="w-58 flex gap-5 justify-center items-center border-2 my-5 py-4 pl-6 pr-8 rounded-lg font-medium text-lg cursor-pointer">
-              <p>Download v1.0.1</p>
+              <p>Download {latestVersion}</p>
               <Image
                 src={theme === 'light' ? "icons/chevron-down-dark.svg" : "icons/chevron-down-light.svg"}
                 width={16}
@@ -37,7 +38,7 @@ export default function Home() {
             </div>
 
             {toggleDropdown && <div className="w-full absolute top-22 right-0 border-2 rounded-lg">
-              <a href={downloadLink}>
+              <a href={arm64Url}>
                 <div className="flex gap-5 items-center justify-between py-4 pl-7 pr-10 border-b overflow-hidden cursor-pointer not-dark:hover:bg-magnolia-50 dark:hover:bg-magnolia-900">
                   <p>Optimized APK</p>
                   <Image
@@ -47,7 +48,7 @@ export default function Home() {
                     alt="download" />
                 </div>
               </a>
-              <a href={defaultDownloadLink}>
+              <a href={defaultUrl}>
                 <div className="flex gap-5 items-center justify-between py-4 pl-7 pr-10 border-b overflow-hidden cursor-pointer not-dark:hover:bg-magnolia-50 dark:hover:bg-magnolia-900">
                   <p>Default APK</p>
                   <Image
@@ -69,7 +70,7 @@ export default function Home() {
           <p className="mb-5 text-2xl font-medium">Setup Instructions</p>
           <div className="text-xl font-light">
             <ol>
-              <li className="mb-2 list-decimal">Download the application by clicking the <a href={downloadLink} className="not-dark:text-magnolia-800 dark:text-magnolia-50 underline">download</a> button.</li>
+              <li className="mb-2 list-decimal">Download the application by clicking the <a href={arm64Url} className="not-dark:text-magnolia-800 dark:text-magnolia-50 underline">download</a> button.</li>
               <li className="mb-2 list-decimal">Turn off Play Protect on Google Playstore. This is to allow you to install an application that is not on the Google Playstore. Steps to turn off are shown below followed by screenshots.</li>
             </ol>
             <ul className="w-full text-left mb-5">
