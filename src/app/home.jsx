@@ -21,78 +21,60 @@ export default function Home() {
       </Head>
       <div className="flex flex-col items-center justify-center px-5 not-dark:bg-magnolia-50 dark:bg-magnolia-950 not-dark:text-magnolia-950 dark:text-magnolia-50">
         <HeaderLinks active="home" />
-        <div className="h-screen flex flex-col items-center justify-center">
-          <Image src={theme === 'light' ? "/images/icon.png" : "/images/icon-dark.png"} width={250} height={250} alt="App Icon" />
+        <div className="pt-10 max-w-[900px] flex flex-col items-center pb-10">
+          <Image src={theme === 'light' ? "/images/icon.png" : "/images/icon-dark.png"} width={150} height={150} alt="App Icon" />
           <p className="font-medium text-5xl tracking-wide -mt-3 pb-10">SpendAnalysis</p>
-          <div className="relative">
-            <a href={arm64Url}>
-              <div
-                // onClick={() => setToggleDropdown(!toggleDropdown)}
-                className="w-58 flex gap-5 justify-center items-center border-2 my-5 py-4 pl-6 pr-8 rounded-lg font-medium text-lg cursor-pointer">
-                <p>Download {latestVersion}</p>
-                {/* <Image
-                src={theme === 'light' ? "icons/chevron-down-dark.svg" : "icons/chevron-down-light.svg"}
-                width={16}
-                height={16}
-                alt="chevron_down"
-                className={`${toggleDropdown ? 'rotate-180' : ''}`} /> */}
-              </div>
-            </a>
-
-            {toggleDropdown && <div className="w-full absolute top-22 right-0 border-2 rounded-lg">
-              <a href={arm64Url}>
-                <div className="flex gap-5 items-center justify-between py-4 pl-7 pr-10 border-b overflow-hidden cursor-pointer not-dark:hover:bg-magnolia-50 dark:hover:bg-magnolia-900">
-                  <p>Optimized APK</p>
-                  <Image
-                    src={theme === 'light' ? "icons/arrow-down-dark.svg" : "icons/arrow-down-light.svg"}
-                    width={12}
-                    height={12}
-                    alt="download" />
-                </div>
-              </a>
-              <a href={defaultUrl}>
-                <div className="flex gap-5 items-center justify-between py-4 pl-7 pr-10 border-b overflow-hidden cursor-pointer not-dark:hover:bg-magnolia-50 dark:hover:bg-magnolia-900">
-                  <p>Default APK</p>
-                  <Image
-                    src={theme === 'light' ? "icons/arrow-down-dark.svg" : "icons/arrow-down-light.svg"}
-                    width={12}
-                    height={12}
-                    alt="download" />
-                </div>
-              </a>
-            </div>}
-          </div>
-        </div>
-        <div className="max-w-[900px] flex flex-col items-center pb-10">
-          <div className="text-center tracking-wide text-xl font-light">
+          <div className="text-cente tracking-wide text-xl font-light">
             <p className="mb-2">Introducing SpendAnalysis, the expenditure summary mobile application. This app gives you summaries of your daily and monthly expenditure of all transactions done through Mpesa.</p>
             <p className="mb-2">The summaries assist in financial planning and budgeting, as knowing you monthly expenditure assists in forecasting the next.</p>
             <p className="mb-10">The summaries generated are as accurate as your Mpesa messages are. This means that any deleted messages are not accounted for.</p>
           </div>
           <p className="mb-5 text-2xl font-medium">Setup Instructions</p>
           <div className="text-xl font-light">
-            <ol>
-              <li className="mb-2 list-decimal">Download the application by clicking the <a href={arm64Url} className="not-dark:text-magnolia-800 dark:text-magnolia-50 underline">download</a> button.</li>
+            <ol className="mb-5 pl-5">
+              <li className="mb-2 list-decimal">Download the application by clicking the download button below.</li>
               <li className="mb-2 list-decimal">Turn off Play Protect on Google Playstore. This is to allow you to install an application that is not on the Google Playstore. Steps to turn off are shown below followed by screenshots.</li>
-            </ol>
-            <ul className="w-full text-left mb-5">
-              <li className="list-disc list-inside mb-2">Open Google Playstore and click your account icon on the top right.</li>
-              <li className="list-disc list-inside mb-2">Click Play Protect</li>
-              <li className="list-disc list-inside mb-2">Click the settings icon at the top right</li>
-              <li className="list-disc list-inside mb-2">Toggle the <span className="font-medium">Scan apps with Play Protect</span></li>
-              <li className="list-disc list-inside mb-2">The following popup will appear. Click <span className="font-medium">Turn off</span>.</li>
-              <li className="list-disc list-inside mb-2">You will be requested for your security credentials (PIN, fingerprint, Face ID)</li>
-              <li className="list-disc list-inside mb-2">Once done, go to your download folder and open the application to install.</li>
-            </ul>
-            <div className="flex gap-5 flex-wrap justify-center sm:justify-start">
+              <ul className="w-full text-left mb-5">
+                <li className="list-disc list-inside mb-2">Open Google Playstore and click your account icon on the top right.</li>
+                <li className="list-disc list-inside mb-2">Click Play Protect</li>
+                <li className="list-disc list-inside mb-2">Click the settings icon at the top right</li>
+                <li className="list-disc list-inside mb-2">Toggle the <span className="font-medium">Scan apps with Play Protect</span></li>
+                <li className="list-disc list-inside mb-2">The following popup will appear. Click <span className="font-medium">Turn off</span>.</li>
+                <li className="list-disc list-inside mb-2">You will be requested for your security credentials (PIN, fingerprint, Face ID)</li>
+                <li className="list-disc list-inside mb-2">Once done, go to your download folder and open the application to install.</li>
+              </ul>
+            <div className="flex gap-5 flex-wrap justify-center sm:justify-start mb-5">
               <Image src="/images/image-1.jpg" width={250} height={300} alt="Screenshot 1" />
               <Image src="/images/image-2.jpg" width={250} height={300} alt="Screenshot 2" />
               <Image src="/images/image-3.jpg" width={250} height={300} alt="Screenshot 3" />
               <Image src="/images/image-4.jpg" width={250} height={300} alt="Screenshot 4" />
               <Image src="/images/image-5.jpg" width={250} height={300} alt="Screenshot 5" />
             </div>
+              <li className="mb-2 list-decimal">Install the application. You might be requested to enable &quot;Install unknown apps&quot;. Enable this. This setting is just a security measure to preventing installing apps that are not from the Play Store</li>
+            </ol>
           </div>
         </div>
+        <div className="flex flex-col items-center justify-center pb-20">
+          <div className="mb-10">
+            <a href={arm64Url}>
+              <div className="w-58 flex gap-5 justify-center items-center border-2 my-5 py-4 pl-6 pr-8 rounded-lg font-medium text-lg cursor-pointer">
+                <p>Download {latestVersion}</p>
+              </div>
+            </a>
+          </div>
+          <p className="mb-5 text-2xl font-medium">Frequently Asked Questions</p>
+          <div className="max-w-[900px] flex flex-col pb-10">
+            <ol className="w-full">
+              <li className="list-decimal list-inside text-xl font-medium mb-1">Why is the app not on Play Store?</li>
+              <p className="text-lg mb-5">Play Store has a restrictive policy on applications that access your messages. If your application accesses messages, Playstore expects it to be trying to become your default messaging app, like TrueCaller does. This application is not trying to do that hence, running into issues with Play Store. Read more <a href="https://support.google.com/googleplay/android-developer/answer/10208820?hl=en#zippy=%2Cpermitted-uses-of-the-sms-and-call-log-permissions" target="_blank" rel="noreferrer" className="underline">here</a>.</p>
+              <li className="list-decimal list-inside text-xl font-medium mb-1">Can I enable PlayProtect after installing the application?</li>
+              <p className="text-lg mb-5">Yes, you can. It should bring no issues.</p>
+              <li className="list-decimal list-inside text-xl font-medium mb-1">Does this app send any of my messages outside my phone e.g. to a server?</li>
+              <p className="text-lg mb-5">No. All processing happens on-device.</p>
+            </ol>
+          </div>
+        </div>
+
       </div>
     </>
   )
