@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 
 import HeaderLinks from "./components/HeaderLinks";
 import { useState } from "react";
-import { latestVersion, arm64Url, defaultUrl } from "./services/FirebaseConnection"
+import { latestVersion, arm64Url } from "./services/FirebaseConnection"
 
 
 export default function Home() {

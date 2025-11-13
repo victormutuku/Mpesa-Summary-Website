@@ -22,9 +22,24 @@ const db = getFirestore(app);
 
 const querySnapshot = await getDocs(collection(db, "app_links"));
 
-const latestValue = querySnapshot.docs[querySnapshot.docs.length -1];
+const latestValue = querySnapshot.docs[querySnapshot.docs.length - 1];
 
 export const latestVersion = latestValue.id;
 
 export const arm64Url = latestValue.data()['arm64_url'];
 export const defaultUrl = latestValue.data()['default_url'];
+
+export const notes = () => {
+    const notesArray = [];
+
+    for (const item of querySnapshot.docs) {
+        notesArray.push({
+            key: item.id.substring(1, item.id.length),
+            value: item.data()['notes'] ?? [],
+        });
+    }
+
+    notesArray.reverse();
+    return notesArray;
+};
+
