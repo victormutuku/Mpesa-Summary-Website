@@ -22,8 +22,7 @@ export default function PrivacyPolicy() {
                         content on your device. This data is stored locally on your device and is not transmitted to our<br /> servers.
                     </li> */}
                     <li className="mb-3 list-decimal list-inside">
-                        <span className="font-semibold">Device Information:</span>
-                        We may collect certain information about your device, such as the<br />
+                        <span className="font-semibold">Device Information:</span> We may collect certain information about your device, such as the<br />
                         device model, operating system version, and unique device identifiers. This information helps us<br />
                         improve the application&apos;s compatibility and performance.
                     </li>
@@ -32,13 +31,11 @@ export default function PrivacyPolicy() {
                 <p className="font-semibold mb-5">How We Use Your Information:</p>
                 <ol className="mb-8">
                     <li className="mb-3 list-decimal list-inside">
-                        <span className="font-semibold">Improvement of Services:</span>
-                        We use device information to analyze trends, troubleshoot<br />
+                        <span className="font-semibold">Improvement of Services:</span> We use device information to analyze trends, troubleshoot<br />
                         issues, and enhance the overall performance and user experience of the application.
                     </li>
                     <li className="mb-3 list-decimal list-inside">
-                        <span className="font-semibold">No Transmission of Data:</span>
-                        SpendAnalysis operates on a local device basis. We do not collect, store,<br />
+                        <span className="font-semibold">No Transmission of Data:</span> SpendAnalysis operates on a local device basis. We do not collect, store,<br />
                         or transmit any user-generated content or personal information to our servers or any third<br />
                         parties.
                     </li>
