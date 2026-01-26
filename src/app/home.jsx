@@ -26,7 +26,7 @@ export default function Home() {
           <div className="text-center tracking-wide text-xl font-light">
             <p className="mb-2">Introducing SpendAnalysis, the expenditure summary mobile application. This app gives you summaries of your daily and monthly expenditure of all transactions done through Mpesa.</p>
             <p className="mb-2">The summaries assist in financial planning and budgeting, as knowing you monthly expenditure assists in forecasting the next.</p>
-            <p className="mb-0">The summaries generated are as accurate as your Mpesa messages are. This means that any deleted messages are not accounted for.</p>
+            <p className="mb-10">The summaries generated are as accurate as your Mpesa messages are. This means that any deleted messages are not accounted for.</p>
           </div>
           <p className="mb-5 text-2xl font-medium">Setup Instructions</p>
           <div className="text-xl font-light">
