@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderLinks from '../components/HeaderLinks'
+import HeaderLinks from '../../components/HeaderLinks'
 
 export default function TermsAndConditions() {
     var companyName = "ComfortChest Limited";
@@ -11,7 +11,7 @@ export default function TermsAndConditions() {
 
     return (
         <div className='w-full flex justify-center'>
-            <div className="flex flex-col items-center justify-center pt-20 px-5 not-dark:text-magnolia-950 dark:text-magnolia-50 max-w-[900px]">
+            <div className="flex flex-col items-center justify-center pt-20 px-5 max-w-225">
                 <HeaderLinks active='terms' />
                 <p className='text-2xl font-medium lg:px-20 mb-4'>Terms and Conditions</p>
                 <p className="mb-6"><span className="font-semibold">Effective Date:</span> 6th April 2026</p>

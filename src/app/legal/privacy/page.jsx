@@ -1,4 +1,4 @@
-import HeaderLinks from '../components/HeaderLinks'
+import HeaderLinks from '../../components/HeaderLinks'
 
 export default function PrivacyPolicy() {
     var companyName = "ComfortChest Limited";
@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
 
     return (
         <div className='w-full flex justify-center'>
-            <div className="flex flex-col items-center justify-center pt-20 px-5 not-dark:text-magnolia-950 dark:text-magnolia-50 max-w-[900px]">
+            <div className="flex flex-col items-center justify-center pt-20 px-5 max-w-225">
                 <HeaderLinks active='privacy' />
                 <p className='text-2xl font-medium lg:px-20 mb-4'>Privacy Policy</p>
                 <p className="mb-6"><span className="font-semibold">Effective Date:</span> 8th April 2026</p>

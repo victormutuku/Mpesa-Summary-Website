@@ -8,8 +8,8 @@ export default function HeaderLinks({ active = "" }) {
                 <Link href={'/changelog'} className={`hover:underline ${active === "changelog" && "underline"}`}>ChangeLog</Link>
             </div>
             <div className="flex gap-5">
-                <Link href={'/terms-and-conditions'} className={`hover:underline ${active === "terms" && "underline"}`}>Terms and Conditions</Link>
-                <Link href={'/privacy'} className={`hover:underline ${active === "privacy" && "underline"}`}>Privacy</Link>
+                <Link href={'/legal/terms-and-conditions'} className={`hover:underline ${active === "terms" && "underline"}`}>Terms and Conditions</Link>
+                <Link href={'/legal/privacy'} className={`hover:underline ${active === "privacy" && "underline"}`}>Privacy</Link>
             </div>
         </div>
     )
