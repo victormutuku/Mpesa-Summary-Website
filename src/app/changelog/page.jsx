@@ -6,10 +6,10 @@ export default function ChangeLog() {
     var notesMap = notes();
 
     return (
-        <div className="h-screen flex flex-col items-center pt-20 px-5 not-dark:bg-magnolia-50 dark:bg-magnolia-950 not-dark:text-magnolia-950 dark:text-magnolia-50">
+        <div className="h-screen flex flex-col items-center pt-20 px-5">
             <HeaderLinks active='changelog' />
             <p className='text-2xl font-medium lg:px-20 mb-8'>ChangeLog</p>
-            <div className="lg:px-20 max-w-[900px]">
+            <div className="lg:px-20 max-w-225">
                 {notesMap.map((item, index) => {
                     return item.value.length !== 0 ?
                         <div key={index}>
