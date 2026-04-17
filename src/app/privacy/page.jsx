@@ -5,6 +5,9 @@ export default function PrivacyPolicy() {
     var address = "Chemilil Road, Nairobi, Kenya";
     var email = "victor.mmuu@gmail.com";
     var phone = "+254 758 973 766";
+
+    var contactEmail = <a href={`mailto:${email}`} rel='noreferrer' className='underline'>{email}</a>
+
     return (
         <div className='w-full flex justify-center'>
             <div className="flex flex-col items-center justify-center pt-20 px-5 not-dark:text-magnolia-950 dark:text-magnolia-50 max-w-[900px]">
@@ -16,7 +19,7 @@ export default function PrivacyPolicy() {
 
                     <p className="font-semibold mb-4">1. INTRODUCTION</p>
                     <div className="flex flex-col gap-2 mb-8">
-                        <p>ComfortChest Limited (“we,” “us,” or “our”) operates the SpendAnalysis mobile application (“App”). We are committed to protecting your personal data and respecting your privacy in accordance with the Kenya Data Protection Act, 2019 (“the Act”) and its regulations.</p>
+                        <p>{companyName} (“we,” “us,” or “our”) operates the SpendAnalysis mobile application (“App”). We are committed to protecting your personal data and respecting your privacy in accordance with the Kenya Data Protection Act, 2019 (“the Act”) and its regulations.</p>
                         <p>This Privacy Policy explains what data we collect, why we collect it, how we use and protect it, and what rights you have over it. Please read this policy carefully before using the App. By creating an account or using the App, you acknowledge that you have read and understood this policy.</p>
                     </div>
 
@@ -194,7 +197,7 @@ export default function PrivacyPolicy() {
                         <p> <span className='font-semibold'>Right to Data Portability</span> — You may request a copy of your data in a structured, commonly used format.</p>
                         <p> <span className='font-semibold'>Right to Withdraw Consent</span> — Where we process your data based on your consent, you may withdraw that consent at any time without affecting the lawfulness of processing before withdrawal.</p>
                         <p>
-                            To exercise any of these rights, contact us at <a href="mailto:victor.mmuu@gmail.com" rel='noreferrer' className='font-semibold underline'>victor.mmuu@gmail.com</a>.  We will respond within 21 days as required under the Act. We may need to verify your identity before processing your request.</p>
+                            To exercise any of these rights, contact us at {contactEmail}.  We will respond within 21 days as required under the Act. We may need to verify your identity before processing your request.</p>
                     </div>
 
                     {/* 10. COOKIES AND TRACKING TECHNOLOGIES */}
@@ -208,7 +211,7 @@ export default function PrivacyPolicy() {
 
                     <p className="font-semibold mb-4">11. CHILDREN&apos;S PRIVACY</p>
                     <div className="flex flex-col gap-2 mb-8">
-                        <p>SpendAnalysis is not intended for use by persons under the age of 18. We do not knowingly collect personal data from children. If you believe we have inadvertently collected data from a minor, please contact us immediately at <a href="mailto:victor.mmuu@gmail.com" rel='noreferrer' className='font-semibold underline'>victor.mmuu@gmail.com</a> and we will promptly delete it.</p>
+                        <p>SpendAnalysis is not intended for use by persons under the age of 18. We do not knowingly collect personal data from children. If you believe we have inadvertently collected data from a minor, please contact us immediately at {contactEmail} and we will promptly delete it.</p>
                     </div>
 
                     {/* 12. CHANGES TO THIS PRIVACY POLICY */}
@@ -229,7 +232,7 @@ export default function PrivacyPolicy() {
                             <span className='font-semibold'>Office of the Data Protection Commissioner</span><br />
                             Website: www.odpc.go.ke<br />
                             Email: info@odpc.go.ke</p>
-                        <p>We encourage you to contact us first at <a href="mailto:victor.mmuu@gmail.com" rel='noreferrer' className='font-semibold underline'>victor.mmuu@gmail.com</a> so we can try to resolve your concern directly before you escalate to the ODPC.</p>
+                        <p>We encourage you to contact us first at {contactEmail} so we can try to resolve your concern directly before you escalate to the ODPC.</p>
                     </div>
 
                     {/* 14. CONTACT US */}
@@ -241,7 +244,7 @@ export default function PrivacyPolicy() {
                             <p>
                                 {companyName}<br />
                                 {address}<br />
-                                Email: {email}<br />
+                                Email: <a href={`mailto:${email}`} rel='noreferrer'>{email}</a><br />
                                 Phone: {phone}</p>
                             <p className='mt-4 font-semibold'>This Privacy Policy should be read alongside the SpendAnalysis Terms and Conditions.</p>
                         </div>
