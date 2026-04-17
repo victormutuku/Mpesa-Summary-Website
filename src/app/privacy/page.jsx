@@ -78,7 +78,7 @@ export default function PrivacyPolicy() {
                         </ul>
                         <p className='font-semibold'>Your financial data never leaves your phone.</p>
                     </div>
-                    
+
                     {/* 4. HOW WE COLLECT YOUR DATA */}
 
                     <p className="font-semibold mb-4">4. HOW WE COLLECT YOUR DATA</p>
@@ -99,9 +99,11 @@ export default function PrivacyPolicy() {
                             Under the Kenya Data Protection Act, 2019, we must have a lawful basis for processing your personal data. The table below sets out what we collect, why, and our legal basis for doing so:</p>
                         <table className='border-collapse border my-2'>
                             <thead>
-                                <th className='border py-1'>Data</th>
-                                <th className='border py-1'>Purpose</th>
-                                <th className='border py-1'>Legal Basis</th>
+                                <tr>
+                                    <th className='border py-1'>Data</th>
+                                    <th className='border py-1'>Purpose</th>
+                                    <th className='border py-1'>Legal Basis</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr>
