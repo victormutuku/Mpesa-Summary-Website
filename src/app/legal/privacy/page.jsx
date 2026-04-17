@@ -1,13 +1,7 @@
 import HeaderLinks from '../../components/HeaderLinks'
+import { companyName, address, email, phone, contactEmail } from '../data'
 
 export default function PrivacyPolicy() {
-    var companyName = "ComfortChest Limited";
-    var address = "Chemilil Road, Nairobi, Kenya";
-    var email = "victor.mmuu@gmail.com";
-    var phone = "+254 758 973 766";
-
-    var contactEmail = <a href={`mailto:${email}`} rel='noreferrer' className='underline'>{email}</a>
-
     return (
         <div className='w-full flex justify-center'>
             <div className="flex flex-col items-center justify-center pt-20 px-5 max-w-225">
