@@ -28,28 +28,6 @@ export default function Home() {
             <p className="mb-2">The summaries assist in financial planning and budgeting, as knowing you monthly expenditure assists in forecasting the next.</p>
             <p className="mb-10">The summaries generated are as accurate as your Mpesa messages are. This means that any deleted messages are not accounted for.</p>
           </div>
-          {/* <p className="mb-5 text-2xl font-medium">Setup Instructions</p>
-          <div className="text-xl font-light">
-            <ol className="mb-5 pl-5">
-              <li className="mb-2 list-decimal">Download the application by clicking the download button below.</li>
-              <li className="mb-2 list-decimal">Turn off Play Protect on Google Playstore. This is to allow you to install an application that is not on the Google Playstore. Steps to turn off are shown below followed by screenshots.</li>
-              <ul className="w-full text-left mb-5">
-                <li className="list-disc list-inside mb-2">Open Google Playstore and click your account icon on the top right.</li>
-                <Image src="/images/image-1.jpg" width={250} height={300} alt="Screenshot 1" className="ml-7"/>
-                <li className="list-disc list-inside mb-2">Click Play Protect</li>
-                <Image src="/images/image-2.jpg" width={250} height={300} alt="Screenshot 2" className="ml-7"/>
-                <li className="list-disc list-inside mb-2">Click the settings icon at the top right</li>
-                <Image src="/images/image-3.jpg" width={250} height={300} alt="Screenshot 3" className="ml-7"/>
-                <li className="list-disc list-inside mb-2">Toggle the <span className="font-medium">Scan apps with Play Protect</span></li>
-                <Image src="/images/image-4.jpg" width={250} height={300} alt="Screenshot 4" className="ml-7"/>
-                <li className="list-disc list-inside mb-2">The following popup will appear. Click <span className="font-medium">Turn off</span>.</li>
-                <Image src="/images/image-5.jpg" width={250} height={300} alt="Screenshot 5" className="ml-7"/>
-                <li className="list-disc list-inside mb-2">You will be requested for your security credentials (PIN, fingerprint, Face ID)</li>
-                <li className="list-disc list-inside mb-2">Once done, go to your download folder and open the application to install.</li>
-              </ul>
-              <li className="mb-2 list-decimal">Install the application. You might be requested to enable &quot;Install unknown apps&quot;. Enable this. This setting is just a security measure to preventing installing apps that are not from the Play Store</li>
-            </ol>
-          </div> */}
         </div>
         <div className="flex flex-col items-center justify-center pb-5">
           <div className="mb-10">
