@@ -11,15 +11,17 @@ export default function Home() {
   
   const { theme } = useTheme();
 
+  const imageLink = theme === 'light' ? "/images/icon.png" : "/images/icon-dark-2.png";
+
   return (
     <>
       <Head>
-        <link rel="icon" href={theme === 'light' ? "/images/icon.png" : "/images/icon-dark.png"} sizes="any" />
+        <link rel="icon" href={imageLink} sizes="any" />
       </Head>
       <div className="flex flex-col items-center justify-center px-5">
         <HeaderLinks active="home" />
         <div className="pt-10 max-w-225 flex flex-col items-center pb-10">
-          <Image src={"/images/icon.png"} width={150} height={150} alt="App Icon" />
+          <Image src={imageLink} width={150} height={150} alt="App Icon" />
           <div className="mt-3 pb-10 flex flex-col items-center">
             <p className="font-medium text-5xl tracking-wide">SpendAnalysis</p>
           </div>
