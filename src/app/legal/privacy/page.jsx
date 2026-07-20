@@ -4,7 +4,7 @@ import { companyName, address, email, phone, contactEmail } from '../data'
 export default function PrivacyPolicy() {
     return (
         <div className='w-full flex justify-center'>
-            <div className="flex flex-col items-center justify-center pt-20 px-5 max-w-225">
+            <div className="flex flex-col items-center justify-center pt-20 px-5 max-w-225 text-magnolia-950">
                 <HeaderLinks active='privacy' />
                 <p className='text-2xl font-medium lg:px-20 mb-4'>Privacy Policy</p>
                 <p className="mb-6"><span className="font-semibold">Effective Date:</span> 8th April 2026</p>

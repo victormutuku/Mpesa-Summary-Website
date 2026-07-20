@@ -1,8 +1,8 @@
-import { Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
-const outfit = Outfit({ subsets: ["latin"] });
+const font = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "SpendAnalysis - Track your spending",
@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
         }}
       />
       <body
-        className={`${outfit.className} antialiased`}
+        className={`${font.className} antialiased`}
       >
         {children}
       </body>
