@@ -4,51 +4,100 @@ import { useTheme } from "next-themes";
 
 import HeaderLinks from "./components/HeaderLinks";
 import { latestVersion, arm64Url } from "./services/FirebaseConnection"
+import FeatureCard from "./components/home/FeatureCard";
+import FAQCard from "./components/FAQCard";
 
 
 export default function Home() {
   const playstoreUrl = "https://play.google.com/store/apps/details?id=com.victor.spend_analysis";
-  
+
   const { theme } = useTheme();
 
-  const imageLink = theme === 'light' ? "/images/icon.png" : "/images/icon-dark-2.png";
+  const imageLink = theme !== 'light' ? "/images/icon.png" : "/images/icon-dark-2.png";
 
   return (
     <>
       <Head>
         <link rel="icon" href={imageLink} sizes="any" />
       </Head>
-      <div className="flex flex-col items-center justify-center px-5">
-        <HeaderLinks active="home" />
-        <div className="pt-10 max-w-225 flex flex-col items-center pb-10">
-          <Image src={imageLink} width={150} height={150} alt="App Icon" />
-          <div className="mt-3 pb-10 flex flex-col items-center">
-            <p className="font-medium text-5xl tracking-wide">SpendAnalysis</p>
-          </div>
-          <div className="text-center tracking-wide text-xl font-light">
-            <p className="mb-2">Introducing SpendAnalysis, the expenditure summary mobile application. This app gives you summaries of your daily and monthly expenditure of all transactions done through Mpesa.</p>
-            <p className="mb-2">The summaries assist in financial planning and budgeting, as knowing you monthly expenditure assists in forecasting the next.</p>
-            <p className="mb-10">The summaries generated are as accurate as your Mpesa messages are. This means that any deleted messages are not accounted for.</p>
-          </div>
-        </div>
-        <div className="flex flex-col items-center justify-center pb-5">
-          <div className="mb-10">
+      <HeaderLinks active="home" />
+      <div className="w-full h-180 mt-0 flex flex-col items-center justify-center pl-20 pr-20">
+        <div className="w-full flex justify-between items-center">
+          <div className="w-125">
+            <p className="text-[2em] text-magnolia-950 font-semibold z-10">Tracking your <span className="underlinfe font-bold">Expenses</span> has never been easier </p>
+            <p className="font-light mb-5">Automatically track your spending on Mpesa. Get monthly and daily summaries of your spending. Know how much goes to transaction cost.</p>
             <a href={playstoreUrl} target="_blank" rel="noreferrer">
-              <div className=" flex gap-5 justify-center items-center border-2 my-5 py-4 pl-6 pr-8 rounded-lg font-medium text-lg cursor-pointer whitespace-nowrap">
-                <p>Download on Play Store</p>
-              </div>
+              <button
+                type="button"
+                className="bg-magnolia-950 text-magnolia-50 py-3 px-11 rounded-lg text-lg cursor-pointer flex gap-2">
+                Get it now on
+                <Image src={"/images/play-store-logo.svg"} alt='' width={20} height={20} />
+              </button>
             </a>
           </div>
-          <p className="mb-5 text-2xl font-medium">Frequently Asked Questions</p>
-          <div className="max-w-225 flex flex-col pb-10">
-            <ol className="w-full">
-              <li className="list-decimal list-inside text-xl font-medium mb-1">Does the app access my M-pesa Pin?</li>
-              <p className="text-lg mb-5">No. It does not.</p>
-              <li className="list-decimal list-inside text-xl font-medium mb-1">Does this app send any of my messages outside my phone e.g. to a server?</li>
-              <p className="text-lg mb-5">No. All processing happens on-device.</p>
-            </ol>
+          <div>
+            <Image src={"/images/landing-page.png"} width={600} height={600} alt="App Icon" />
           </div>
         </div>
+      </div>
+      <div className="w-full h-full flex flex-col justify-center items-center mb-20">
+        <p className="text-[2em] text-magnolia-950 font-semibold mb-10">Features</p>
+        <div className="w-full flex flex-col gap-10 px-20">
+          <FeatureCard
+            title={"Monthly Summaries"}
+            description={"Get monthly summaries of your Mpesa spending including the total outgoing amount and total transaction cost incurred in the month"}
+            image={"/images/monthly-summary-cards-2.svg"}
+          />
+          <FeatureCard
+            reverse
+            title={"Budgeting"}
+            description={"Create budgets to keep track of your spending. The budgets can be monthly, weekly, daily or even custom-defined e.g. A 2-week budget"}
+            image={"/images/budget-card.svg"}
+          />
+          <FeatureCard
+            title={"Monthly Trend Graph"}
+            description={"Visualize your spending to learn your spending patterns across the month"}
+            image={"/images/monthly-trend.svg"}
+          />
+            <FeatureCard
+              reverse
+              title={"Daily Summaries and Breakdown"}
+              description={"Know how much you spent per day including where you spent it, and how many times you spent your money at the same place"}
+              image={"/images/daily-summaries-2.svg"}
+            />
+          <FeatureCard
+            title={"Establishments"}
+            description={"Learn how much you've spent at your favourite places since forever!"}
+            image={"/images/establishment-tiles.svg"}
+          />
+          <div className="w-full mt-10 flex justify-center">
+            <a href={playstoreUrl} target="_blank" rel="noreferrer">
+              <button
+                type="button"
+                className="bg-magnolia-950 text-magnolia-50 py-3 px-11 rounded-lg text-lg cursor-pointer">
+                Download Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-full flex flex-col justify-center items-center mb-20 px-40">
+        <p className="text-[2em] text-magnolia-950 font-semibold mb-10">Frequently Asked Questions</p>
+        <div className="w-full flex flex-col gap-5">
+          <FAQCard
+            question="Is the app free?"
+            answer="Yes, most of the features are free. Some features are premuim and hence need to be paid for." />
+          <FAQCard
+            question="Do I need to sign up to use the app?"
+            answer="No, most of the features are accessible without an account. An account is only needed if you want to access the premium features." />
+          <FAQCard
+            question="Can you see my M-Pesa balance/messages/summaries?"
+            answer="No, I cannot. That stays private to you." />
+        </div>
+      </div>
+      <div className="flex justify-between mb-0.5 mx-1 text-sm text-magnolia-950">
+        <p>Made by <a href="https://www.victor-mutuku.com" rel="noreferrer" tabIndex={1} target="_blank" className="underline">Victor Mutuku</a></p>
+        <p className="">Copyright 2026</p>
       </div>
     </>
   )
