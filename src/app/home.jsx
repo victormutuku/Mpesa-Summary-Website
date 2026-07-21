@@ -21,7 +21,7 @@ export default function Home() {
         <link rel="icon" href={imageLink} sizes="any" />
       </Head>
       <HeaderLinks active="home" />
-      <div className="w-full h-screen lg:h-180 flex flex-col lg:flex-row items-center justify-center px-5 md:px-20 mt-5 sm:mt-30 lg:mt-0 mb-30">
+      <div className="w-full h-screen lg:h-180 flex flex-col lg:flex-row items-center justify-center px-5 md:px-20 sm:mt-30 lg:mt-0 mb-30">
         <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between items-center">
           <div className="sm:w-125 flex flex-col items-center lg:items-start">
             <p className="text-[2em] text-magnolia-950 font-semibold z-10">Tracking your <span className="underlinfe font-bold">Expenses</span> has never been easier </p>
