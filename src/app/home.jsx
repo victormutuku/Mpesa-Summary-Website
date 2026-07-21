@@ -97,7 +97,7 @@ export default function Home() {
             answer="No, I cannot. That stays private to you." />
         </div>
       </div>
-      <div className="flex justify-between mb-0.5 mx-1 text-sm text-magnolia-950">
+      <div className="flex justify-between mb-0.5 mx-5 sm:mx-1 text-sm text-magnolia-950">
         <p>Made by <a href="https://www.victor-mutuku.com" rel="noreferrer" tabIndex={1} target="_blank" className="underline">Victor Mutuku</a></p>
         <p className="">Copyright 2026</p>
       </div>
