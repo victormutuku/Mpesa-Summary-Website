@@ -16,12 +16,12 @@ export default function Home() {
   const imageLink = theme !== 'light' ? "/images/icon.png" : "/images/icon-dark-2.png";
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Head>
         <link rel="icon" href={imageLink} sizes="any" />
       </Head>
       <HeaderLinks active="home" />
-      <div className="w-full h-screen lg:h-180 flex flex-col lg:flex-row items-center justify-center px-5 md:px-20 sm:mt-30 lg:mt-0 mb-30">
+      <div className="w-full h-screen lg:h-180 flex flex-col lg:flex-row items-center justify-center px-5 md:px-20 sm:mt-30 lg:mt-0 mb-10 sm:mb-20">
         <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between items-center">
           <div className="sm:w-125 flex flex-col items-center lg:items-start">
             <p className="text-[2em] text-magnolia-950 font-semibold z-10">Tracking your <span className="underlinfe font-bold">Expenses</span> has never been easier </p>
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="relative"> 
             <Image src={"/images/landing-page.png"} width={600} height={600} alt="App Icon" className="hidden lg:block"/>
             <Image src={"/images/landing-page.png"} width={500} height={500} alt="App Icon" className="lg:hidden"/>
-            <div className="absolute -bottom-13 left-1 w-123 lg:w-148 h-2 rounded-full bg-magnolia-950/50 blur-lg"></div>
+            <div className="absolute -bottom-13 left-1 w-full sm:w-123 lg:w-148 h-2 rounded-full bg-magnolia-950/50 blur-lg"></div>
           </div>
         </div>
       </div>
@@ -101,6 +101,6 @@ export default function Home() {
         <p>Made by <a href="https://www.victor-mutuku.com" rel="noreferrer" tabIndex={1} target="_blank" className="underline">Victor Mutuku</a></p>
         <p className="">Copyright 2026</p>
       </div>
-    </>
+    </div>
   )
 }
