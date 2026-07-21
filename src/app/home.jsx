@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import HeaderLinks from "./components/HeaderLinks";
 import { latestVersion, arm64Url } from "./services/FirebaseConnection"
 import FeatureCard from "./components/home/FeatureCard";
-import FAQCard from "./components/FAQCard";
+import FAQCard from "./components/home/FAQCard";
 
 
 export default function Home() {
@@ -21,9 +21,9 @@ export default function Home() {
         <link rel="icon" href={imageLink} sizes="any" />
       </Head>
       <HeaderLinks active="home" />
-      <div className="w-full h-screen lg:h-180 flex flex-col lg:flex-row items-center justify-center pl-20 pr-20 mt-30 lg:mt-0 mb-30">
+      <div className="w-full h-screen lg:h-180 flex flex-col lg:flex-row items-center justify-center px-5 md:px-20 mt-30 lg:mt-0 mb-30">
         <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between items-center">
-          <div className="w-125 flex flex-col items-center lg:items-start">
+          <div className="sm:w-125 flex flex-col items-center lg:items-start">
             <p className="text-[2em] text-magnolia-950 font-semibold z-10">Tracking your <span className="underlinfe font-bold">Expenses</span> has never been easier </p>
             <p className="font-light mb-5">Automatically track your spending on Mpesa. Get monthly and daily summaries of your spending. Know how much goes to transaction cost.</p>
             <a href={playstoreUrl} target="_blank" rel="noreferrer">
