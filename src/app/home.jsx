@@ -21,9 +21,9 @@ export default function Home() {
         <link rel="icon" href={imageLink} sizes="any" />
       </Head>
       <HeaderLinks active="home" />
-      <div className="w-full h-180 mt-0 flex flex-col items-center justify-center pl-20 pr-20">
-        <div className="w-full flex justify-between items-center">
-          <div className="w-125">
+      <div className="w-full h-screen lg:h-180 flex flex-col lg:flex-row items-center justify-center pl-20 pr-20 mt-30 lg:mt-0 mb-30">
+        <div className="w-full flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between items-center">
+          <div className="w-125 flex flex-col items-center lg:items-start">
             <p className="text-[2em] text-magnolia-950 font-semibold z-10">Tracking your <span className="underlinfe font-bold">Expenses</span> has never been easier </p>
             <p className="font-light mb-5">Automatically track your spending on Mpesa. Get monthly and daily summaries of your spending. Know how much goes to transaction cost.</p>
             <a href={playstoreUrl} target="_blank" rel="noreferrer">
@@ -36,14 +36,15 @@ export default function Home() {
             </a>
           </div>
           <div className="relative"> 
-            <Image src={"/images/landing-page.png"} width={600} height={600} alt="App Icon" />
-            <div className="absolute -bottom-13 left-1 w-148 h-2 rounded-full bg-magnolia-950/50 blur-lg"></div>
+            <Image src={"/images/landing-page.png"} width={600} height={600} alt="App Icon" className="hidden lg:block"/>
+            <Image src={"/images/landing-page.png"} width={500} height={500} alt="App Icon" className="lg:hidden"/>
+            <div className="absolute -bottom-13 left-1 w-123 lg:w-148 h-2 rounded-full bg-magnolia-950/50 blur-lg"></div>
           </div>
         </div>
       </div>
       <div className="w-full h-full flex flex-col justify-center items-center mb-20">
         <p className="text-[2em] text-magnolia-950 font-semibold mb-10">Features</p>
-        <div className="w-full flex flex-col gap-10 px-20">
+        <div className="w-full px-5 lg:px-20 xl:px-40 grid grid-cols-1 gap-10 lg:flex lg:flex-col lg:gap-10">
           <FeatureCard
             title={"Monthly Summaries"}
             description={"Get monthly summaries of your Mpesa spending including the total outgoing amount and total transaction cost incurred in the month"}
@@ -82,7 +83,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full h-full flex flex-col justify-center items-center mb-20 px-40">
+      <div className="w-full h-full  px-5 lg:px-20 flex flex-col justify-center items-center mb-20">
         <p className="text-[2em] text-magnolia-950 font-semibold mb-10">Frequently Asked Questions</p>
         <div className="w-full flex flex-col gap-5">
           <FAQCard
