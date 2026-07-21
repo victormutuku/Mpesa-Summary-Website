@@ -35,8 +35,9 @@ export default function Home() {
               </button>
             </a>
           </div>
-          <div>
+          <div className="relative"> 
             <Image src={"/images/landing-page.png"} width={600} height={600} alt="App Icon" />
+            <div className="absolute -bottom-13 left-1 w-148 h-2 rounded-full bg-magnolia-950/50 blur-lg"></div>
           </div>
         </div>
       </div>
